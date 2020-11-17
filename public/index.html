@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="description" content="Juego de disparar marcianos">
+    <meta name="theme-color" content="#1860aa">
+    <meta name="apple-mobile-web-app-title" content="Invasión Alienígena">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta rel="apple-touch-icon" href="assets/icons/camera192.png">
+    
+
+    <title>¡Invasión Alienígena!</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!-- sass compiled -->
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+    <link href="assets/css/main.css.map" />
+
+    <!-- material icons -->
+    <link type="text/css" rel="stylesheet" href="assets/css/materialdesignicons.css" />
+    <link href="assets/css/materialdesignicons.css.map" />
+
+    <!-- swiperjs -->
+    <link rel="stylesheet" href="app/libs/swiper.css" />
+</head>
+
+<body>
+    <div class="celr_btn_install">
+        <button id="butInstall" aria-label="Install" hidden>Instalar "Invasión Alienígena"...</button>
+    </div>
+    <div id="app" class="app">
+
+
+
+
+
+
+        <!-- 
+            SPLASH PAGE
+            
+            Información sobre splash page.
+
+            -->
+        <section id="splash_page" class="full_window center">
+            <!-- Splash template -->
+            <h1>¡¡¡¡Bienvenidos!!!!</h1>
+           
+            <div class="present-image">
+                <svg class="svg_presentation_ini1">
+                    <circle cx="20" cy="50" r="15"/>
+                </svg>
+                <svg class="svg_presentation_ini2">
+                    <circle cx="20" cy="50" r="15"/>
+                </svg>
+                <img src="assets/img/presentacion.png" />
+            </div>
+
+            </section>
+        </section>
+
+
+
+
+
+
+
+        <!-- 
+            MAIN PAGE
+            
+            Página donde está alojado el juego
+            
+            -->
+        <section id="main_page" class="full_window">
+            <!-- Main page UI -->
+            <div class="ui">
+                <div class="lifes">
+                    <span id="livesAmount" class="amount">3</span>
+                    <span class="icon">
+                        <span class="mdi mdi-cards-heart"></span>
+                    </span>
+                </div>
+                <div class="score">
+                    <span id="scoreAmount" class="amount">0</span>
+                    <span class="icon">
+                        <span class="mdi mdi-star"></span>
+                    </span>
+                </div>
+                <div class="pause">
+                    <a href="#modal_pause_window" class="pause_btn" id="pause" navigation-type="modal" animation-type="pause_modal">
+                        <span class="mdi mdi-pause-circle-outline"></span>
+                    </a>
+                </div>
+            </div>
+            <!-- Main page Juego!! -->
+            <div class="game">
+                
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- 
+            VENTANA MODAL PAUSA
+            
+            Ventana modal de pausa
+            
+            -->
+        <section id="modal_pause_window" class="modal_window modal_light">
+            <!-- modal overlay -->
+            <div class="overlay"></div>
+            <!-- modal holder -->
+            <div class="holder">
+                <!-- modal settings -->
+                <div class="settings">
+                    <div class="setting">
+                        <span class="mdi mdi-volume-high"></span> Música <span class="mdi mdi-checkbox-blank-circle"></span>
+                        <!--
+                        <div class="setting_icon">
+                            <span class="mdi mdi-volume-high"></span>
+                        </div>
+                        <div class="setting_label">
+                            Música
+                        </div>
+                        <div class="setting_toggle">
+                            <div class="toggle">
+                                <span class="mdi mdi-checkbox-blank-circle"></span>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                    <div class="setting">
+                        <span class="mdi mdi-music-note-eighth"></span> Efectos <span class="mdi mdi-checkbox-blank-circle"></span>
+                        <!--
+                        <div class="setting_icon">
+                            <span class="mdi mdi-music-note-eighth"></span>
+                        </div>
+                        <div class="setting_label">
+                            Efectos
+                        </div>
+                        <div class="setting_toggle">
+                            <div class="toggle">
+                                <span class="mdi mdi-checkbox-blank-circle"></span>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                </div>
+
+                <!-- modal ctas -->
+                <div class="item_menu  btn_s">
+                    <a class="btn" href="#main_page" navigation-type="modal" animation-type="resume_modal">Volver</a>
+                </div> 
+                <div class="item_menu  btn_p">      
+                    <a class="btn" href="#modal_confirm" navigation-type="modal" animation-type="confirm_modal_in">Salir</a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- 
+            VENTANA MODAL CONFIRMACIÓN
+            
+            Ventana modal de confirmación
+            
+            -->
+        <section id="modal_confirm" class="modal_window">
+            <!-- modal overlay -->
+            <div class="overlay"></div>
+            <!-- modal holder -->
+            <div class="holder">
+                <!-- modal message -->
+                <div class="message centrar">
+                    Si abandona el juego, perderá todos tus puntos.<br />¿estás seguro?
+                </div>
+
+                <!-- modal cta -->
+                <div class="cta">
+                    <div class="item_menu btn_p">
+                        <a class="btn" href="#menu_page" navigation-type="animation" animation-type="game_out">Salir</a>
+                    </div>
+                    <div class="item_menu btn_s">
+                        <a class="btn" href="#main_page" navigation-type="modal" animation-type="confirm_modal_out">Volver</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <div id="swiper_page" class="swiper_section full_window">
+
+            <div class="swiper-wrapper">
+
+            <!-- 
+                PÁGINA DE SETTINGS
+                
+                Página para modificar settings
+                
+                -->
+            <section id="settings_page" class="swiper_item swiper-slide">
+                <header class="header centrar">
+                    <h2>Opciones</h2>
+                </header>
+
+                <div class="main">
+                    <div class="settings">
+                        <div class="setting">
+                            <span class="mdi mdi-volume-high"></span> Música <span class="mdi mdi-checkbox-blank-circle"></span>
+                            <!--
+                            <div class="setting_icon">
+                                <span class="mdi mdi-volume-high"></span>
+                            </div>
+                            <div class="setting_label">
+                                Música
+                            </div>
+                            <div class="setting_toggle">
+                                <div class="toggle">
+                                    <span class="mdi mdi-checkbox-blank-circle"></span>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                        <div class="setting">
+                            <span class="mdi mdi-music-note-eighth"></span> Efectos <span class="mdi mdi-checkbox-blank-circle"></span>
+                            <!--
+                            <div class="setting_icon">
+                                <span class="mdi mdi-music-note-eighth"></span>
+                            </div>
+                            <div class="setting_label">
+                                Efectos
+                            </div>
+                            <div class="setting_toggle">
+                                <div class="toggle">
+                                    <span class="mdi mdi-checkbox-blank-circle"></span>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <div class="item_menu btn_p">
+                        <a href="#menu_page" navigation-type="swipe">Volver</a>
+                    </div>
+                </footer>
+            </section>
+
+
+
+
+
+
+            <!-- 
+                MENU PAGE
+                
+                Página de menu
+                
+                -->
+            <section id="menu_page" class="swiper_item swiper-slide">
+                <header class="header centrar">
+                    <h1>¡Invasión Alienígena! </h1>
+                </header>
+                <div class="slider centrar">
+                    <br>Espero que os divirtáis tanto jugando<br>como me he divertido yo haciéndolo.
+                </div>
+
+                <div class="present-image">
+                    <svg class="svg_presentation_1">
+                        <circle cx="20" cy="50" r="15"/>
+                    </svg>
+                    <svg class="svg_presentation_2">
+                        <circle cx="20" cy="50" r="15"/>
+                    </svg>
+                    <svg class="svg_presentation_3">
+                        <circle cx="20" cy="50" r="15"/>
+                    </svg>
+                    <img src="assets/img/jefe.png" />
+                </div>
+
+                <footer class="footer">
+                    <div class="item_menu btn_p">
+                        <a href="#main_page" navigation-type="animation" animation-type="menu_to_game">
+                            <span class="mdi mdi-airplane-takeoff"></span>
+                            <span class="label">Jugar!!!</span>
+                        </a>
+                    </div>
+                    <div class="item_menu btn_s">
+                        <a href="#settings_page" navigation-type="swipe">
+                            <span class="mdi mdi-settings"></span>
+                            <span class="label">Opciones</span>
+                        </a>
+                    </div>
+                    <div class="item_menu btn_s">
+                        <a href="#leaderboard_page" navigation-type="swipe">
+                            <span class="mdi mdi-signal"></span>
+                            <span class="label">Clasificación</span>
+                        </a>
+                    </div>
+                </footer>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 
+                PÁGINA DE HIGH SCORES
+                
+                Página para meter high scores con PWA
+                
+                -->
+            <section id="leaderboard_page" class="swiper_item swiper-slide">
+                <!-- Leaderboard HighScore -->
+                <section class="hscore">
+                    <header class="header centrar">
+                        <h2>Clasificación</h2>
+                    </header>
+                </section>
+
+                <!-- Leaderboard  -->
+                <section class="lboard">
+                    <div class="main">
+                        <div class="lboard_table">
+                            <div class="lboard_item">
+                                <div class="lboard_item_name">
+                                    <img src="assets/img/malo.png" />
+                                    <span class="name_player">Juan</span>
+                                </div>
+                                <div class="lboard_item_p">Puntuación: 1245</div>
+                            </div>
+                            <div class="lboard_item">
+                                <div class="lboard_item_name">
+                                    <img src="assets/img/malo.png" />
+                                    <span class="name_player">María</span>
+                                </div>
+                                <div class="lboard_item_p">Puntuación: 1050</div>
+                            </div>
+                            <div class="lboard_item">
+                                <div class="lboard_item_name">
+                                    <img src="assets/img/malo.png" />
+                                    <span class="name_player">Pedro</span>
+                                </div>
+                                <div class="lboard_item_p">Puntuación: 950</div>
+                            </div>
+                            <div class="lboard_item you">
+                                <div class="lboard_item_name">
+                                    <img src="assets/img/malo.png" />
+                                    <span class="name_player">Ana</span>
+                                </div>
+                                <div class="lboard_item_p">Puntuación: 820</div>
+                            </div>
+                            <div class="lboard_item">
+                                <div class="lboard_item_name">
+                                    <img src="assets/img/malo.png" />
+                                    <span class="name_player">Luis</span>
+                                </div>
+                                <div class="lboard_item_p">Puntuación: 750</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Leaderboard back to menu -->
+                <footer class="footer">
+                    <div class="item_menu btn_p">
+                        <a href="#menu_page" navigation-type="swipe">Volver</a>
+                    </div>
+                </footer>
+            </section>
+
+            </div> <!-- /swipe_wrapper-->
+        </div> <!-- /swipe_section-->
+
+
+
+
+
+
+
+        <!-- 
+            SPINNER
+            
+            Por si se necesita a la hora de hacer un spinner de carga
+            
+            -->
+        <section id="modal_loading_spinner" class="spinner_window">
+            <!-- Spinner -->
+            <span class="spinner">
+                <div class="mdi mdi-loading mdi-spin"></div>
+            </span>
+        </section>
+
+
+    </div>
+
+    <!-- libs -->
+    <script src="app/libs/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="app/libs/anime.min.js" type="text/javascript"></script>
+
+    <!-- game -->
+    <script src="app/Game/Game.js" type="text/javascript"></script>
+    <script src="app/Game/Entity.js" type="text/javascript"></script>
+    <script src="app/Game/Character.js" type="text/javascript"></script>
+    <script src="app/Game/Player.js" type="text/javascript"></script>
+    <script src="app/Game/Opponent.js" type="text/javascript"></script>
+    <script src="app/Game/Shot.js" type="text/javascript"></script>
+    <script src="app/Game/utils.js" type="text/javascript"></script>
+
+    <!-- ui stuff -->
+    <script src="app/Animations.js" type="text/javascript"></script>
+    <script src="app/Navigation.js" type="text/javascript"></script>
+    <script src="app/UI.js" type="text/javascript"></script>
+
+    <!-- inits -->
+    <script src="app/main.js" type="text/javascript"></script>
+
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', ()=>{
+                navigator.serviceWorker.register('service-worker.js').then ((reg)=>{
+                    console.log("Service worker registred", reg);
+                })
+            })
+        }
+    </script>
+    <script src="app/install.js"></script>
+</body>
+
+</html>
