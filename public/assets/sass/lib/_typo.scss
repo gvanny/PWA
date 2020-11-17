@@ -1,0 +1,26 @@
+html,
+body {
+    font-size: $base * 2;
+    font-family: $font_family_base;
+    line-height: $base * 3;
+    color: $body_color;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: $base * 3;
+    line-height: $base * 4;
+    margin: 0 0 $base * 1;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: $base * 2.3;
+    line-height: $base * 3;
+    margin: 0 0 $base * 1;
+}
+
+a {
+    text-decoration: underline;
+    color: rgb(0, 140, 255);
+}

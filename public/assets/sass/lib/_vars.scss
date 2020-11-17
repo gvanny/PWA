@@ -1,0 +1,33 @@
+$font_family_base: 'Nunito',
+'Helvetica',
+Arial,
+sans_serif;
+$base: .5rem;
+$font_size_base: $base * 2;
+$font_weight_base: normal;
+$line_height_base: $base * 3;
+$body_color: #333;
+$body_bg: #fff;
+
+
+$headings_margin_bottom: 1em;
+$paragraph_margin_bottom: 1em;
+
+$dt_font_weight: bold;
+
+$link_color: #345c8d;
+$link_decoration: none;
+$link_hover_color: darken($link_color, 10%);
+$link_hover_decoration: none;
+$table_cell_padding: .5em;
+
+$text_muted: lighten($body_color, 15%);
+
+
+$themes: (
+    "color_1": #F162C1,
+    "color_2": #32F5D2,
+    "color_3": #30ECF8,
+    "gray": #586465,
+    "grayLight": #869FA0
+);
